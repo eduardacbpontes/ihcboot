@@ -5,18 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dúvidas Frequentes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1;
+            overflow-y: auto;
+        }
+        footer {
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+        }
+    </style>
 </head>
 <body>
+    <!-- Navbar -->
     <header class="bg-light py-3">
         <div class="container d-flex justify-content-between align-items-center">
             <h1 class="h3">Oticari</h1>
             <nav>
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="homepage.html">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sobrenos.html">Sobre Nós</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="vitrine.html">Vitrine</a></li>
-                    <li class="nav-item"><a class="nav-link" href="duvidas.html">Dúvidas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="agendamento.html">Agenda Conosco</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="homepage.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="sobrenos.html">Sobre Nós</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="vitrine.html">Vitrine</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="duvidas.html">Dúvidas</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="agendamento.html">Agende Conosco</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -25,30 +47,295 @@
         <div class="row">
             <aside class="col-md-3">
                 <ul class="list-group">
-                    <li class="list-group-item active">Dúvidas frequentes</li>
-                    <li class="list-group-item">Termos de uso</li>
-                    <li class="list-group-item">Entrega</li>
-                    <li class="list-group-item">Privacidade</li>
-                    <li class="list-group-item">Fale conosco</li>
-                    <li class="list-group-item">Reembolso e cancelamento</li>
-                    <li class="list-group-item">Garantia</li>
-                    <li class="list-group-item">Troca e devolução</li>
+                    <li class="list-group-item" onclick="showSection('frequentes')">Dúvidas frequentes</li>
+                    <li class="list-group-item" onclick="showSection('termos')">Termos de uso</li>
+                    <li class="list-group-item" onclick="showSection('entrega')">Entrega</li>
+                    <li class="list-group-item" onclick="showSection('privacidade')">Privacidade</li>
+                    <li class="list-group-item" onclick="showSection('faleConosco')">Fale conosco</li>
+                    <li class="list-group-item" onclick="showSection('reembolso')">Reembolso e cancelamento</li>
+                    <li class="list-group-item" onclick="showSection('garantia')">Garantia</li>
+                    <li class="list-group-item" onclick="showSection('troca')">Troca e devolução</li>
                 </ul>
             </aside>
-            <section class="col-md-9">
-                <h2>Dúvidas frequentes</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vehicula massa vel aliquam
-                    bibendum. Praesent volutpat libero ac lacus varius, non dictum augue tincidunt. 
-                </p>
+            <section class="col-md-9" id="content-section">
+                <div id="frequentes" class="content">
+                    <h2>Dúvidas frequentes</h2>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Quais são os tipos de óculos oferecidos pela Oticari?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    A Oticari oferece óculos de grau, óculos de sol, óculos esportivos e infantis, além de lentes de contato e lentes de transição.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Vocês fazem ajustes nas armações?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sim, oferecemos ajustes gratuitos em nossas armações para garantir que os óculos se ajustem perfeitamente ao seu rosto.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Posso realizar exames de vista na loja?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sim, temos profissionais especializados para realizar exames de vista em nossas lojas. Você pode agendar um exame diretamente pelo nosso site ou visitando uma de nossas unidades.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="termos" class="content d-none">
+                    <h2>Termos de uso</h2>
+                    <div class="accordion" id="termosAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="termosHeadingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#termosCollapseOne" aria-expanded="true" aria-controls="termosCollapseOne">
+                                    Quais são os termos para o uso do site?
+                                </button>
+                            </h2>
+                            <div id="termosCollapseOne" class="accordion-collapse collapse show" aria-labelledby="termosHeadingOne" data-bs-parent="#termosAccordion">
+                                <div class="accordion-body">
+                                    O uso do site implica na aceitação dos termos e condições estipulados, incluindo a política de privacidade.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="termosHeadingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#termosCollapseTwo" aria-expanded="false" aria-controls="termosCollapseTwo">
+                                    Posso compartilhar meu login com terceiros?
+                                </button>
+                            </h2>
+                            <div id="termosCollapseTwo" class="accordion-collapse collapse" aria-labelledby="termosHeadingTwo" data-bs-parent="#termosAccordion">
+                                <div class="accordion-body">
+                                    Não é permitido compartilhar seu login e senha com terceiros, pois isso viola os termos de uso.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="entrega" class="content d-none">
+                    <h2>Entrega</h2>
+                    <div class="accordion" id="entregaAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="entregaHeadingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#entregaCollapseOne" aria-expanded="true" aria-controls="entregaCollapseOne">
+                                    Quais são os prazos de entrega?
+                                </button>
+                            </h2>
+                            <div id="entregaCollapseOne" class="accordion-collapse collapse show" aria-labelledby="entregaHeadingOne" data-bs-parent="#entregaAccordion">
+                                <div class="accordion-body">
+                                    Os prazos de entrega variam de acordo com a localidade e o tipo de frete escolhido. Geralmente, variam de 3 a 10 dias úteis.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="entregaHeadingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#entregaCollapseTwo" aria-expanded="false" aria-controls="entregaCollapseTwo">
+                                    Posso alterar o endereço de entrega após o pedido?
+                                </button>
+                            </h2>
+                            <div id="entregaCollapseTwo" class="accordion-collapse collapse" aria-labelledby="entregaHeadingTwo" data-bs-parent="#entregaAccordion">
+                                <div class="accordion-body">
+                                    Sim, é possível alterar o endereço de entrega antes do envio. Entre em contato com nosso suporte o quanto antes.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="privacidade" class="content d-none">
+                    <h2>Privacidade</h2>
+                    <div class="accordion" id="privacidadeAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="privacidadeHeadingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#privacidadeCollapseOne" aria-expanded="true" aria-controls="privacidadeCollapseOne">
+                                    Como meus dados são utilizados?
+                                </button>
+                            </h2>
+                            <div id="privacidadeCollapseOne" class="accordion-collapse collapse show" aria-labelledby="privacidadeHeadingOne" data-bs-parent="#privacidadeAccordion">
+                                <div class="accordion-body">
+                                    Utilizamos seus dados para processar pedidos, melhorar nossos serviços e oferecer uma experiência personalizada.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="privacidadeHeadingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#privacidadeCollapseTwo" aria-expanded="false" aria-controls="privacidadeCollapseTwo">
+                                    Meus dados são compartilhados?
+                                </button>
+                            </h2>
+                            <div id="privacidadeCollapseTwo" class="accordion-collapse collapse" aria-labelledby="privacidadeHeadingTwo" data-bs-parent="#privacidadeAccordion">
+                                <div class="accordion-body">
+                                    Não compartilhamos seus dados com terceiros sem o seu consentimento, exceto quando necessário para cumprir a lei.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="faleConosco" class="content d-none">
+                    <h2>Fale conosco</h2>
+                    <div class="accordion" id="faleConoscoAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faleConoscoHeadingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faleConoscoCollapseOne" aria-expanded="true" aria-controls="faleConoscoCollapseOne">
+                                    Como posso entrar em contato?
+                                </button>
+                            </h2>
+                            <div id="faleConoscoCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faleConoscoHeadingOne" data-bs-parent="#faleConoscoAccordion">
+                                <div class="accordion-body">
+                                    Você pode entrar em contato pelo nosso telefone, email ou através do formulário na página de contato.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faleConoscoHeadingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faleConoscoCollapseTwo" aria-expanded="false" aria-controls="faleConoscoCollapseTwo">
+                                    Qual o horário de atendimento?
+                                </button>
+                            </h2>
+                            <div id="faleConoscoCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faleConoscoHeadingTwo" data-bs-parent="#faleConoscoAccordion">
+                                <div class="accordion-body">
+                                    Nosso atendimento funciona de segunda a sexta, das 9h às 18h.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="reembolso" class="content d-none">
+                    <h2>Reembolso e cancelamento</h2>
+                    <div class="accordion" id="reembolsoAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="reembolsoHeadingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#reembolsoCollapseOne" aria-expanded="true" aria-controls="reembolsoCollapseOne">
+                                    Como solicitar um reembolso?
+                                </button>
+                            </h2>
+                            <div id="reembolsoCollapseOne" class="accordion-collapse collapse show" aria-labelledby="reembolsoHeadingOne" data-bs-parent="#reembolsoAccordion">
+                                <div class="accordion-body">
+                                    Para solicitar um reembolso, entre em contato com nosso suporte e siga as instruções fornecidas.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="reembolsoHeadingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#reembolsoCollapseTwo" aria-expanded="false" aria-controls="reembolsoCollapseTwo">
+                                    Quais são os prazos para cancelamento?
+                                </button>
+                            </h2>
+                            <div id="reembolsoCollapseTwo" class="accordion-collapse collapse" aria-labelledby="reembolsoHeadingTwo" data-bs-parent="#reembolsoAccordion">
+                                <div class="accordion-body">
+                                    Você pode cancelar o pedido antes do envio. Caso o pedido já tenha sido enviado, deve-se proceder com a devolução.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="garantia" class="content d-none">
+                    <h2>Garantia</h2>
+                    <div class="accordion" id="garantiaAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="garantiaHeadingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#garantiaCollapseOne" aria-expanded="true" aria-controls="garantiaCollapseOne">
+                                    Qual a garantia dos produtos?
+                                </button>
+                            </h2>
+                            <div id="garantiaCollapseOne" class="accordion-collapse collapse show" aria-labelledby="garantiaHeadingOne" data-bs-parent="#garantiaAccordion">
+                                <div class="accordion-body">
+                                    Todos os nossos produtos possuem garantia contra defeitos de fabricação por um período de 12 meses.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="garantiaHeadingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#garantiaCollapseTwo" aria-expanded="false" aria-controls="garantiaCollapseTwo">
+                                    O que está coberto pela garantia?
+                                </button>
+                            </h2>
+                            <div id="garantiaCollapseTwo" class="accordion-collapse collapse" aria-labelledby="garantiaHeadingTwo" data-bs-parent="#garantiaAccordion">
+                                <div class="accordion-body">
+                                    A garantia cobre defeitos de fabricação, incluindo problemas com a armação e as lentes.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="troca" class="content d-none">
+                    <h2>Troca e devolução</h2>
+                    <div class="accordion" id="trocaAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="trocaHeadingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#trocaCollapseOne" aria-expanded="true" aria-controls="trocaCollapseOne">
+                                    Como faço para trocar um produto?
+                                </button>
+                            </h2>
+                            <div id="trocaCollapseOne" class="accordion-collapse collapse show" aria-labelledby="trocaHeadingOne" data-bs-parent="#trocaAccordion">
+                                <div class="accordion-body">
+                                    Para realizar a troca, entre em contato com nosso suporte e envie o produto na embalagem original.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="trocaHeadingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#trocaCollapseTwo" aria-expanded="false" aria-controls="trocaCollapseTwo">
+                                    Em quanto tempo recebo o produto trocado?
+                                </button>
+                            </h2>
+                            <div id="trocaCollapseTwo" class="accordion-collapse collapse" aria-labelledby="trocaHeadingTwo" data-bs-parent="#trocaAccordion">
+                                <div class="accordion-body">
+                                    O prazo para recebimento do produto trocado é de 7 a 15 dias úteis após a confirmação do recebimento do item devolvido.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
 
-    <footer class="bg-light py-3 mt-5">
-        <div class="container text-center">
-            <p class="mb-0">© 2024 Oticari. Todos os direitos reservados.</p>
+    <footer class="bg-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a class="nav-link active" href="homepage.html">Início</a>
+                </div>
+                <div class="col">
+                    <a class="nav-link active" href="sobrenos.html">Sobre nós</a>
+                </div>
+                <div class="col">
+                    <a class="nav-link active" href="vitrine.html">Vitrine</a>
+                </div>
+                <div class="col">
+                    <a class="nav-link active" href="duvidas.html">Dúvidas</a>
+                </div>
+                <div class="col">
+                    <a class="nav-link active" href="agendamento.html">Agende conosco</a>
+                </div>
+            </div>
+            <p class="text-center py-5">© 2024 Oticari. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content');
+            sections.forEach(section => section.classList.add('d-none'));
+            document.getElementById(sectionId).classList.remove('d-none');
+        }
+    </script>
 </body>
 </html>
